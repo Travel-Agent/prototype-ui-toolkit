@@ -1,7 +1,9 @@
-Prototype-Custom-Form-Elements
+Prototype UI Toolkit
 ==============================
 
 Finally, custom form elements without jQuery...
+
+Works great with Magento and other projects where loading additional javascript libraries on top of prototype.js is lazy and can hand serious performance implications.
 
 Requirements:
 -
@@ -9,11 +11,12 @@ Prototype and Scriptaculous.
 
 Features:
 -
-* *Keyboard Navigation for Selects:*
-   While highlighted, pressing enter, up, or down on your keyboard will open the dropdown.
-   While opened, pressing up or down will navigate through the options, and pressing enter will select the currently highlighted option.
-* *Themeing:*
-* *Custom Callbacks*
+* Custom Select Boxes
+* Custom Radio Buttons
+* Toggle Buttons
+* Toggle Button Sets
+* Custom Checkboxes
+* Custom Incrememnter
 
 
 Created by:
