@@ -1,0 +1,402 @@
+@import "variables.less";
+@import "mixins.less";
+
+@import "normalize.less";
+
+/* @group RESETS ========================================================================= */
+select {
+    background-size: auto !important;
+}
+
+:focus {
+    outline-color: transparent;
+    outline-style: none;
+}
+/* @end */
+
+/* @group Sample Page ========================================================================= */
+body {
+    font: normal 13px/1.538em @baseFontFamily;
+    background: #eee;
+}
+
+.wrapper {
+    float: none;
+    margin: 40px auto;
+    width: 640px;
+}
+
+h1 {
+    color: @blue;
+}
+h2 {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+label {
+    color: @grayLight;
+    float: left;
+    clear: both;
+    padding: 0 0 10px 0;
+}
+
+fieldset {
+    padding: 20px;
+    border: 0;
+    ul {
+        float: left;
+        list-style: none;
+        list-style-type: none;
+        padding-left: 0;
+        li {
+            float: left;
+            clear: both;
+            margin-bottom: 20px;
+        }
+    }
+}
+/* @end */
+
+/* @group Custom Form Elements ========================================================================= */
+
+.input-box, .input-box-long {
+    float: left;
+    clear: both;
+    &:focus {
+        outline: 0;
+    }
+}
+
+// Custom Selects ------------------------------------------------------- */
+select.custom {
+    top: 0;
+    left: 0;
+}
+
+.custom-shiv {
+    display: block;
+    border: 1px solid @grayLight;
+    height: 30px;
+    padding: 0 35px 0 10px;
+    width: 145px;
+    font: normal 14px/30px @baseFontFamily;
+    color: @gray;
+    background: rgba(255,255,255,0.5);
+    .border-radius(5px);
+    .box-shadow(inset 0px 1px 2px #e3e3e3);
+    span {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 23px;
+        height: 30px;
+        .border-right-radius(5px);
+        border: 1px solid @borderBlue;
+        #gradient > .vertical(#1FAEFF, #009BD6);
+        .box-shadow(inset 1px 1px 0px #50C1FF);
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            background: url('../images/prototype-ui-sprite.png') 0px -10px no-repeat;
+            width: 16px;
+            height: 11px;
+            left: 5px;
+            top: 12px;
+        }
+    }
+    &.hover {
+        background: @white;
+        span:after {
+            content: '';
+            position: absolute;
+            display: block;
+            background: url('../images/prototype-ui-sprite.png') -34px 0px no-repeat;
+            width: 16px;
+            height: 11px;
+            left: 4px;
+            top: 10px;
+        }
+    }
+    &[disabled="disabled"], &[disabled="disabled"].hover {
+        background: transparent;
+    }
+}
+
+.input-box-long {
+    .custom-shiv {
+        width: 500px;
+    }
+}
+
+// Custom Radios ------------------------------------------------------- */
+
+.radio-label {
+    height: 25px;
+    padding-left: 35px;
+    background: url('../images/prototype-ui-sprite.png') 0px -59px no-repeat;
+    font: normal 14px/25px @baseFontFamily;
+    color: @gray;
+    cursor: pointer;
+    &:hover {
+        background-position: 0px -156px;
+    }
+    &.checked {
+        background-position: 0px -347px;
+        &:hover {
+            background-position: 0px -439px;
+        }
+    }
+    &.disabled, &.disabled:hover {
+        background-position: 0px -253px;
+        &.checked {
+            background-position: 0px -534px;
+        }
+    }
+}
+
+.radio-options {
+    margin-left: 60px;
+    li {
+        float: left;
+        clear: none;
+        .radio-label {
+            padding: 0 10px;
+            height: 25px;
+            background: none;
+            border: 1px solid @borderBlue;
+            border-right: 0;
+            font-size: 12px;
+            color: @white;
+            #gradient > .vertical(#1FAEFF, #009BD6);
+            .box-shadow(inset 1px 1px 0px #50C1FF);
+            .text-shadow(0px 1px 1px rgba(0,0,0,0.5));
+            &:hover {
+                .text-shadow(0px 0px 3px rgba(255,255,255,0.15));
+            }
+            &.checked {
+                .reset-filter();
+                background: #009BD6;
+                .box-shadow(inset 0px 1px 5px darken(#009BD6, 10%));
+            }
+            &.disabled, &.disabled:hover {
+                border-color: #666;
+                .reset-filter();
+                #gradient > .vertical(#ccc, #999);
+                color: darken(@white, 5%);
+                .box-shadow(inset 1px 1px 0px #ddd);
+                .text-shadow(0px 1px 1px rgba(0,0,0,0.5));
+                background-position: 0 0;
+            }
+        }
+        &:first-child {
+            .radio-label {
+                .border-left-radius(5px);
+            }
+        }
+        &:last-child{
+            .radio-label {
+                border-right: 1px solid @borderBlue;
+                .border-right-radius(5px);
+            }
+        }
+    }
+}
+
+.radio-toggle {
+    margin-left: 60px;
+    li {
+        float: left;
+        clear: none;
+        .radio-label {
+            padding: 0 10px;
+            height: 25px;
+            background: none;
+            border: 1px solid @borderBlue;
+            border-right: 0;
+            font-size: 12px;
+            color: @white;
+            #gradient > .vertical(#1FAEFF, #009BD6);
+            .box-shadow(inset 1px 1px 0px #50C1FF);
+            .text-shadow(0px 1px 1px rgba(0,0,0,0.5));
+            &:hover {
+                .text-shadow(0px 0px 3px rgba(255,255,255,0.15));
+            }
+            &.checked {
+                .reset-filter();
+                background: #009BD6;
+                .box-shadow(inset 0px 1px 5px darken(#009BD6, 10%));
+            }
+            &.disabled, &.disabled:hover {
+                border-color: #666;
+                .reset-filter();
+                #gradient > .vertical(#ccc, #999);
+                color: darken(@white, 5%);
+                .box-shadow(inset 1px 1px 0px #ddd);
+                .text-shadow(0px 1px 1px rgba(0,0,0,0.5));
+                background-position: 0 0;
+            }
+        }
+        &:first-child {
+            .radio-label {
+                .border-left-radius(5px);
+            }
+        }
+        &:last-child{
+            .radio-label {
+                border-right: 1px solid @borderBlue;
+                .border-right-radius(5px);
+            }
+        }
+    }
+}
+
+// Custom Checkboxes= ------------------------------------------------------- */
+
+.checkbox-label {
+    height: 25px;
+    padding-left: 35px;
+    background: url('../images/prototype-ui-sprite.png') 0px -629px no-repeat;
+    font: normal 14px/25px @baseFontFamily;
+    color: @gray;
+    cursor: pointer;
+    &.hover {
+        background-position: 0px -713px;
+    }
+    &.checked {
+        background-position: 0px -972px;
+        &:hover {
+            background-position: 0px -1068px;
+        }
+    }
+    &.disabled, &.disabled:hover {
+        background-position: 0px -794px;
+        &.checked {
+            background-position: 0px -886px;
+        }
+    }
+}
+
+.checkbox-toggle {
+    margin-left: 60px;
+    height: 25px;
+    .checkbox-label {
+        float: left;
+        position: relative;
+        border: 1px solid @gray;
+        .border-radius(20px);
+        padding: 0 12px 0 24px;
+        height: 21px;
+        line-height: 21px;
+        background: rgba(255,255,255,0.5);
+        .box-shadow(inset 0px 1px 2px #e3e3e3);
+        span {
+            color: @gray;
+            &:first-child {
+                display: none;
+            }
+            &:last-child {
+                position: absolute;
+                right: -200px;
+                top: 0;
+                width: 190px;
+                padding-left: 10px;
+            }
+        }
+        &:after {
+            content: '';
+            display: block;
+            background: url('../images/prototype-ui-sprite.png') -32px -13px no-repeat;
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            left: 2px;
+            right: auto;
+            top: 2px;
+            z-index: 1;
+        }
+        &.checked {
+            padding: 0 24px 0 12px;
+            background: #009BD6;
+            .box-shadow(inset 0px 1px 5px darken(#009BD6, 10%));
+            span:first-child {
+                display: block;
+                color: @white;
+            }
+            span:nth-child(2) {
+                display: none;
+            }
+            &:after {
+                content: '';
+                left: auto;
+                right: 2px;
+                top: 2px;
+            }
+        }
+    }
+}
+
+// Custom Increments ------------------------------------------------------- */
+input.incrementer {
+    border: 1px solid @grayLight;
+    height: 30px;
+    padding: 0 35px 0 10px;
+    width: 20px;
+    font: normal 14px/30px @baseFontFamily;
+    color: @gray;
+    background: rgba(255,255,255,0.5);
+    .border-radius(5px);
+    .box-shadow(inset 0px 1px 1px 2px #e3e3e3);
+}
+.increment-plus {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 23px;
+    height: 15px;
+    .border-top-right-radius(5px);
+    text-indent: -9999px;
+    #gradient > .vertical(#1eaefe, #12a6ee);
+    border: 1px solid #046683;
+    .box-shadow(inset 0px 1px 0px #4bbbef);
+    cursor: pointer;
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 3px;
+        width: 14px;
+        height: 8px;
+        background: url('../images/prototype-ui-sprite.png') 0 0 no-repeat;
+    }
+}
+.increment-minus {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 23px;
+    height: 15px;
+    .border-bottom-right-radius(5px);
+    text-indent: -9999px;
+    #gradient > .vertical(#0ea4e9, #019cd7);
+    border: 1px solid #046683;
+    .box-shadow(inset 0px 1px 0px #4cbcf0);
+    cursor: pointer;
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        width: 14px;
+        height: 8px;
+        background: url('../images/prototype-ui-sprite.png') 0px -10px no-repeat;
+    }
+}
+
+/* @end */

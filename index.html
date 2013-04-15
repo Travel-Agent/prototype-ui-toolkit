@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Prototype UI Toolkit</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="src/css/prototypeui.css" type="text/css"/>
+    <link href='http://fonts.googleapis.com/css?family=Carter+One&v1' rel='stylesheet' type='text/css' />
+
+    <script src="src/js/prototype.js"></script>
+    <script src="src/js/prototype-ui.1.1.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="wrapper">
+
+    <h1>Prototype UI Toolkit</h1>
+
+    <form action="#" method="post">
+        <fieldset>
+            <ul>
+                <li>
+                    <h2>Custom Select Boxes</h2>
+                    <label for="country-select">Custom Select</label>
+                    <div class="input-box">
+                        <select name="country" id="country-select">
+                            <option value="">Try Me!</option>
+                            <option value="AU">Australia</option>
+                            <option value="CA">Canada</option>
+                            <option value="DE">Germany</option>
+                            <option value="JP">Japan</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="US">United States</option>
+                        </select>
+                    </div>
+                    <script>
+                        Event.observe(window, 'load', function () {
+                            prototypeUI.customSelects({
+                                selectElements: $$('select[name="country"]'),
+                                truncateAmount: 36
+                            });
+                        }.bind(window));
+                    </script>
+                </li>
+                <li>
+                    <label for="address-select">Long Select</label>
+                    <div class="input-box-long">
+                        <select name="address-select" id="address-select">
+                            <option value="">I'm a really long select, you should try me out!</option>
+                            <option value="GO">Google - 1600 Amphitheatre Pkwy, Mountain View, CA 94043</option>
+                            <option value="AP">Apple - 1 Infinite Loop, Cupertino, CA 95014</option>
+                            <option value="FF">Mozilla - 650 Castro Street, Suite 300, Mountain View, CA, 94041-2021 USA</option>
+                            <option value="MS">Microsoft - 1 157th Ave NE, Redmond, WA 98052</option>
+                        </select>
+                    </div>
+                    <script>
+                        Event.observe(window, 'load', function () {
+                            prototypeUI.customSelects({
+                                selectElements: $$('select[name="address-select"]'),
+                                truncateAmount: 255
+                            });
+                        }.bind(window));
+                    </script>
+                </li>
+                <li>
+                    <h2>Custom Radio Buttons</h2>
+                    <ul class="radio-list">
+                        <li>
+                            <div class="input-box">
+                                <input type="radio" name="form:radiogroup" id="form:radiogroup1" class="radio" />
+                                <label for="form:radiogroup1">Radio</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input-box">
+                                <input type="radio" name="form:radiogroup" id="form:radiogroup2" class="radio" checked="checked" />
+                                <label for="form:radiogroup2">Radio Checked</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input-box">
+                                <input type="radio" name="form:radiogroup" id="form:radiogroup3" class="radio" disabled="disabled" />
+                                <label for="form:radiogroup3">Radio Disabled</label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="radio-list radio-options">
+                        <li>
+                            <div class="input-box">
+                                <input type="radio" name="form:radiooption" id="form:radiooption1" class="radio" />
+                                <label for="form:radiooption1">Option</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input-box">
+                                <input type="radio" name="form:radiooption" id="form:radiooption2" class="radio" checked="checked" />
+                                <label for="form:radiooption2">Option Toggled</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input-box">
+                                <input type="radio" name="form:radiooption" id="form:radiooption3" class="radio" disabled="disabled" />
+                                <label for="form:radiooption3">Option Disabled</label>
+                            </div>
+                        </li>
+                    </ul>
+                    <script>
+                        Event.observe(window, 'load', function() {
+                            prototypeUI.customRadios({
+                                radioElements: $$('.radio-list input')
+                            });
+                        }.bind(window));
+                    </script>
+                </li>
+                <li>
+                    <h2>Custom Checkboxes</h2>
+                    <ul class="checkbox-list">
+                        <li>
+                            <div class="input-box">
+                                <input type="checkbox" name="checkbox1" id="checkbox1" class="checkbox" />
+                                <label for="checkbox1">Custom Checkbox</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input-box">
+                                <input type="checkbox" name="checkbox1" id="checkbox1" class="checkbox" checked="checked" />
+                                <label for="checkbox1">Custom Checkbox Checked</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input-box">
+                                <input type="checkbox" name="checkbox2" id="checkbox2" class="checkbox" disabled="disabled" />
+                                <label for="checkbox1">Custom Checkbox Disabled</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input-box">
+                                <input type="checkbox" name="checkbox2" id="checkbox2" class="checkbox" disabled="disabled" checked="checked" />
+                                <label for="checkbox1">Custom Checkbox Checked &amp; Disabled</label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="checkbox-list checkbox-toggle">
+                        <li>
+                            <div class="input-box">
+                                <input type="checkbox" id="checkbox5" class="checkbox" />
+                                <label for="checkbox5">
+                                    <span>Yes</span>
+                                    <span>No</span>
+                                    <span class="label">Test Toggle</span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <script>
+                        Event.observe(window, 'load', function() {
+                            prototypeUI.customCheckboxes({
+                                radioElements: $$('.checkbox-list input')
+                            });
+                        }.bind(window));
+                    </script>
+                </li>
+                <li>
+                    <h2>Custom Incrememnter</h2>
+                    <div class="input-box">
+                        <input id="incrememnter-sample" type="input" class="input-text incrementer" value="1" />
+                    </div>
+                    <script>
+                        Event.observe(window, 'load', function() {
+                            prototypeUI.customIncrement({
+                                incrementElement: $$('input.incrementer'),
+                                valMinimum: 0,
+                                valMaximum: 10000
+                            });
+                        });
+                    </script>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+
+    </div>
+
+    <!-- BEGIN SCRIPT DECLARATIONS -->
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Roboto+Condensed:400,700,300:latin' ] }
+        };
+        (function(){
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+</body>
+</html>
