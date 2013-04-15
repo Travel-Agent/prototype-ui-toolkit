@@ -386,6 +386,13 @@ select {
   outline-color: transparent;
   outline-style: none;
 }
+a {
+  color: #049cdb;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 /* @end */
 /* @group Sample Page ========================================================================= */
 body {
