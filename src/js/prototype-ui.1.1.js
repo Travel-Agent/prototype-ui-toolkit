@@ -39,8 +39,8 @@ var prototypeUIToolkit = Class.create({
                     zIndex: 10,
                     opacity: 0,
                     cursor: 'pointer',
-                    position: 'absolute',
-                }).addClassName('custom')
+                    position: 'absolute'
+                }).addClassName('custom');
 
                 // Apply Data Attribute of Truncate Value to Select so it's saved in the
                 // DOM for later reference if needed.
@@ -54,7 +54,7 @@ var prototypeUIToolkit = Class.create({
                 title = el.childElements().first().innerHTML.strip().truncate(selectTruncate);
 
                 // Check to see if any options are selected and set title variable to content of selected option.
-                var selectedEl = el[el.selectedIndex].text;
+                selectedEl = el[el.selectedIndex].text;
 
                 if(selectedEl.length > 0){
                     title = selectedEl.strip().truncate(selectTruncate);
@@ -255,7 +255,7 @@ var prototypeUIToolkit = Class.create({
                     el.setStyle({
                         position: 'absolute',
                         left:   '-9999px'
-                    })
+                    });
 
                     elLabel.addClassName('checkbox-label');
 
