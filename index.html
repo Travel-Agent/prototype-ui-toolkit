@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="src/css/prototypeui.css" type="text/css"/>
     <link href='http://fonts.googleapis.com/css?family=Carter+One&v1' rel='stylesheet' type='text/css' />
 
-    <script src="src/js/prototype.js"></script>
-    <script src="src/js/prototype-ui.1.1.js"></script>
+    <script src="src/js/vanilla-ui-1.0.0.js"></script>
 
     <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -48,12 +47,12 @@
                         </select>
                     </div>
                     <script>
-                        Event.observe(window, 'load', function () {
-                            prototypeUI.customSelects({
-                                selectElements: $$('select[name="country"]'),
-                                truncateAmount: 36
-                            });
-                        }.bind(window));
+                        // Event.observe(window, 'load', function () {
+                        //     prototypeUI.customSelects({
+                        //         selectElements: $$('select[name="country"]'),
+                        //         truncateAmount: 36
+                        //     });
+                        // }.bind(window));
                     </script>
                 </li>
                 <li>
@@ -68,12 +67,12 @@
                         </select>
                     </div>
                     <script>
-                        Event.observe(window, 'load', function () {
-                            prototypeUI.customSelects({
-                                selectElements: $$('select[name="address-select"]'),
-                                truncateAmount: 255
-                            });
-                        }.bind(window));
+                        // Event.observe(window, 'load', function () {
+                        //     prototypeUI.customSelects({
+                        //         selectElements: $$('select[name="address-select"]'),
+                        //         truncateAmount: 255
+                        //     });
+                        // }.bind(window));
                     </script>
                 </li>
                 <li>
@@ -119,11 +118,11 @@
                         </li>
                     </ul>
                     <script>
-                        Event.observe(window, 'load', function() {
-                            prototypeUI.customRadios({
-                                radioElements: $$('.radio-list input')
-                            });
-                        }.bind(window));
+                        // Event.observe(window, 'load', function() {
+                        //     prototypeUI.customRadios({
+                        //         radioElements: $$('.radio-list input')
+                        //     });
+                        // }.bind(window));
                     </script>
                 </li>
                 <li>
@@ -167,11 +166,11 @@
                         </li>
                     </ul>
                     <script>
-                        Event.observe(window, 'load', function() {
-                            prototypeUI.customCheckboxes({
-                                radioElements: $$('.checkbox-list input')
-                            });
-                        }.bind(window));
+                        // Event.observe(window, 'load', function() {
+                        //     prototypeUI.customCheckboxes({
+                        //         radioElements: $$('.checkbox-list input')
+                        //     });
+                        // }.bind(window));
                     </script>
                 </li>
                 <li>
@@ -180,13 +179,13 @@
                         <input id="incrememnter-sample" type="input" class="input-text incrementer" value="1" />
                     </div>
                     <script>
-                        Event.observe(window, 'load', function() {
-                            prototypeUI.customIncrement({
-                                incrementElement: $$('input.incrementer'),
-                                valMinimum: 0,
-                                valMaximum: 10000
-                            });
-                        });
+                        // Event.observe(window, 'load', function() {
+                        //     prototypeUI.customIncrement({
+                        //         incrementElement: $$('input.incrementer'),
+                        //         valMinimum: 0,
+                        //         valMaximum: 10000
+                        //     });
+                        // });
                     </script>
                 </li>
             </ul>

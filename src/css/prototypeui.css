@@ -464,7 +464,7 @@ select.custom {
   -moz-box-shadow: inset 0px 1px 2px #e3e3e3;
   box-shadow: inset 0px 1px 2px #e3e3e3;
 }
-.custom-shiv span {
+.custom-shiv i {
   position: absolute;
   right: 0;
   top: 0;
@@ -489,7 +489,7 @@ select.custom {
   -moz-box-shadow: inset 1px 1px 0px #50c1ff;
   box-shadow: inset 1px 1px 0px #50c1ff;
 }
-.custom-shiv span:after {
+.custom-shiv i:after {
   content: '';
   position: absolute;
   display: block;
@@ -502,7 +502,7 @@ select.custom {
 .custom-shiv.hover {
   background: #ffffff;
 }
-.custom-shiv.hover span:after {
+.custom-shiv.hover i:after {
   content: '';
   position: absolute;
   display: block;
